@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Typography } from "@mui/material";
 import ButtonLess from "./ButtonLess";
 import ButtonPlus from "./ButtonPlus";
 
 const EnergyDestroyed = () => {
+  const [value, setValue] = useState(0);
+
   return (
     <div style={styles.energyContainer}>
       <Typography
@@ -15,8 +18,8 @@ const EnergyDestroyed = () => {
         Energy Destroyed
       </Typography>
       <div>
-        <ButtonLess />
-        <ButtonPlus />
+        <ButtonLess value={value} setValue={setValue} add={true} />
+        <ButtonPlus setValue={setValue} add={false} />
       </div>
     </div>
   );
@@ -24,11 +27,11 @@ const EnergyDestroyed = () => {
 
 const styles = {
   energyContainer: {
-    marginTop: "15px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
+    minWidth: "190px",
   },
 };
 

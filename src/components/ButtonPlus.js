@@ -1,5 +1,24 @@
-const ButtonPlus = () => {
-  return <button style={styles.buttonPlus}>+</button>;
+import { useDispatch } from "react-redux";
+import { addEnergy, removeEnergy } from "../actions/energyActions";
+
+const ButtonPlus = ({ setValue, add }) => {
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(add ? addEnergy : removeEnergy);
+    setValue((val) => {
+      if (val < 9) {
+        return val + 1;
+      }
+      return val;
+    });
+  };
+
+  return (
+    <button style={styles.buttonPlus} onClick={handleClick}>
+      +
+    </button>
+  );
 };
 
 const styles = {
