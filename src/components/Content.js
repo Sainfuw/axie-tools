@@ -3,7 +3,6 @@ import Container from "@mui/material/Container";
 import Round from "./Round";
 import EnergyCount from "./EnergyCount";
 import EnergyVariants from "./EnergyVariants";
-import EndTurn from "./EndTurn";
 
 const Content = () => (
   <Container
@@ -15,7 +14,6 @@ const Content = () => (
     <Round />
     <EnergyCount />
     <EnergyVariants />
-    <EndTurn />
   </Container>
 );
 

@@ -1,11 +1,8 @@
-import { useState } from "react";
 import { Typography } from "@mui/material";
 import ButtonLess from "./ButtonLess";
 import ButtonPlus from "./ButtonPlus";
 
-const EnergyGained = () => {
-  const [value, setValue] = useState(0);
-
+const EnergyGained = ({ energyGained, setEnergyGained }) => {
   return (
     <div style={styles.energyContainer}>
       <Typography
@@ -18,8 +15,12 @@ const EnergyGained = () => {
         Energy Gained
       </Typography>
       <div>
-        <ButtonLess value={value} setValue={setValue} add={false} />
-        <ButtonPlus setValue={setValue} add={true} />
+        <ButtonLess
+          value={energyGained}
+          setValue={setEnergyGained}
+          add={false}
+        />
+        <ButtonPlus setValue={setEnergyGained} add={true} />
       </div>
     </div>
   );

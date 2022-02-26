@@ -1,10 +1,11 @@
 import { useDispatch } from "react-redux";
 import { nextTurn } from "../actions/energyActions";
 
-const EndTurn = () => {
+const EndTurn = ({ restartEnergies }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
+    restartEnergies();
     dispatch(nextTurn);
   };
 
