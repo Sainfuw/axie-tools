@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
-import { addEnergy, removeEnergy } from "../actions/energyActions";
+import { addEnergy, removeEnergy } from "../../actions/energyActions";
 
-const ButtonLess = ({ value, setValue, add }) => {
+export const ButtonLess = ({ value, setValue, add }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -34,5 +34,3 @@ const styles = {
     margin: "0px 6px",
   },
 };
-
-export default ButtonLess;

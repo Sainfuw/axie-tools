@@ -1,7 +1,7 @@
 import Container from "@mui/material/Container";
-import Copyright from "./Copyright";
+import { Copyright } from "./Copyright";
 
-const Footer = () => (
+export const Footer = () => (
   <Container
     maxWidth="md"
     component="footer"
@@ -14,5 +14,3 @@ const Footer = () => (
     <Copyright sx={{ mt: 5 }} />
   </Container>
 );
-
-export default Footer;

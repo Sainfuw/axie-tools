@@ -1,5 +1,3 @@
-import types from "../types";
-
 const initialState = {
   round: 1,
   energy: 3,
@@ -7,27 +5,27 @@ const initialState = {
 
 export const energyReducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.addEnergy:
+    case "@energy/add":
       return state.energy >= 10
         ? state
         : {
             ...state,
             energy: state.energy + 1,
           };
-    case types.removeEnergy:
+    case "@energy/remove":
       return state.energy === 0
         ? state
         : {
             ...state,
             energy: state.energy - 1,
           };
-    case types.restartEnergy:
+    case "@energy/restart":
       return {
         ...state,
         round: 1,
         energy: 3,
       };
-    case types.nextTurn:
+    case "@energy/nextTurn":
       return state.energy >= 8
         ? {
             ...state,

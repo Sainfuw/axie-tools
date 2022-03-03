@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-import RestartGame from "./RestartGame";
-import EnergyGained from "./EnergyGained";
-import EnergyDestroyed from "./EnergyDestroyed";
-import EndTurn from "./EndTurn";
+import { RestartGame } from "../buttons/RestartGame";
+import { EnergyGained } from "./EnergyGained";
+import { EnergyDestroyed } from "./EnergyDestroyed";
+import { EndTurn } from "../buttons/EndTurn";
 
-const EnergyVariants = () => {
+export const EnergyVariants = () => {
   const [energyGained, setEnergyGained] = useState(0);
   const [energyDestroyed, setEnergyDestroyed] = useState(0);
 
@@ -40,5 +40,3 @@ const styles = {
     alignItems: "center",
   },
 };
-
-export default EnergyVariants;

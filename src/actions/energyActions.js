@@ -1,17 +1,15 @@
-import types from "../types";
-
 export const addEnergy = {
-  type: types.addEnergy,
+  type: "@energy/add",
 };
 
 export const removeEnergy = {
-  type: types.removeEnergy,
+  type: "@energy/remove",
 };
 
 export const restartEnergy = {
-  type: types.restartEnergy,
+  type: "@energy/restart",
 };
 
 export const nextTurn = {
-  type: types.nextTurn,
+  type: "@energy/nextTurn",
 };

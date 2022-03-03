@@ -1,8 +1,8 @@
 import { Typography } from "@mui/material";
-import ButtonLess from "./ButtonLess";
-import ButtonPlus from "./ButtonPlus";
+import { ButtonLess } from "../buttons/ButtonLess";
+import { ButtonPlus } from "../buttons/ButtonPlus";
 
-const EnergyDestroyed = ({ energyDestroyed, setEnergyDestroyed }) => {
+export const EnergyGained = ({ energyGained, setEnergyGained }) => {
   return (
     <div style={styles.energyContainer}>
       <Typography
@@ -12,15 +12,15 @@ const EnergyDestroyed = ({ energyDestroyed, setEnergyDestroyed }) => {
         color="text.secondary"
         gutterBottom
       >
-        Energy Destroyed
+        Energy Gained
       </Typography>
       <div>
         <ButtonLess
-          value={energyDestroyed}
-          setValue={setEnergyDestroyed}
-          add={true}
+          value={energyGained}
+          setValue={setEnergyGained}
+          add={false}
         />
-        <ButtonPlus setValue={setEnergyDestroyed} add={false} />
+        <ButtonPlus setValue={setEnergyGained} add={true} />
       </div>
     </div>
   );
@@ -35,5 +35,3 @@ const styles = {
     minWidth: "190px",
   },
 };
-
-export default EnergyDestroyed;

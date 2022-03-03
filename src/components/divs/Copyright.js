@@ -1,7 +1,7 @@
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 
-const Copyright = (props) => {
+export const Copyright = (props) => {
   return (
     <Typography
       variant="body2"
@@ -18,5 +18,3 @@ const Copyright = (props) => {
     </Typography>
   );
 };
-
-export default Copyright;

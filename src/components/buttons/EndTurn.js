@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
-import { nextTurn } from "../actions/energyActions";
+import { nextTurn } from "../../actions/energyActions";
 
-const EndTurn = ({ restartEnergies }) => {
+export const EndTurn = ({ restartEnergies }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -41,5 +41,3 @@ const styles = {
     },
   },
 };
-
-export default EndTurn;

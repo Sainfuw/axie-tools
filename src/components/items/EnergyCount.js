@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-const EnergyCount = () => {
+export const EnergyCount = () => {
   const { energy } = useSelector((state) => state.energyStore);
 
   return (
@@ -40,5 +40,3 @@ const styles = {
     textShadow: "2px 3px #8E6F6F",
   },
 };
-
-export default EnergyCount;

@@ -1,7 +1,7 @@
 import Typography from "@mui/material/Typography";
 import { useSelector } from "react-redux";
 
-const Round = () => {
+export const Round = () => {
   const { round } = useSelector((state) => state.energyStore);
 
   return (
@@ -15,5 +15,3 @@ const Round = () => {
     </Typography>
   );
 };
-
-export default Round;

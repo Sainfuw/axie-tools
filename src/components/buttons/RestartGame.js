@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
-import { restartEnergy } from "../actions/energyActions";
+import { restartEnergy } from "../../actions/energyActions";
 
-const RestartGame = ({ restartEnergies }) => {
+export const RestartGame = ({ restartEnergies }) => {
   const dispatch = useDispatch();
   const handleClick = () => {
     restartEnergies();
@@ -30,5 +30,3 @@ const styles = {
     margin: "0px 6px",
   },
 };
-
-export default RestartGame;

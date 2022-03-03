@@ -1,12 +1,12 @@
 import { Provider } from "react-redux";
 import { store } from "./store";
 
-import Navbar from "./components/Navbar";
-import Content from "./components/Content";
-import DivisorLine from "./components/DivisorLine";
-import Footer from "./components/Footer";
+import { Navbar } from "./components/divs/Navbar";
+import { Content } from "./components/divs/Content";
+import { DivisorLine } from "./components/items/DivisorLine";
+import { Footer } from "./components/divs/Footer";
 
-const AxieTools = () => {
+export const AxieTools = () => {
   return (
     <Provider store={store}>
       <Navbar />
@@ -17,5 +17,3 @@ const AxieTools = () => {
     </Provider>
   );
 };
-
-export default AxieTools;

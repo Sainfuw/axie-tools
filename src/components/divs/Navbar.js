@@ -3,7 +3,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 
-const Navbar = () => (
+export const Navbar = () => (
   <AppBar
     position="static"
     color="default"
@@ -35,5 +35,3 @@ const Navbar = () => (
     </Toolbar>
   </AppBar>
 );
-
-export default Navbar;
