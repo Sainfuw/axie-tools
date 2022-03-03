@@ -19,7 +19,7 @@ export const SearchAxies = () => {
 
   return (
     <div style={styles.container}>
-      <Stack direction="row" spacing={2}>
+      <Stack direction="row" spacing={4}>
         <TextField
           id="searchAxie"
           type="number"
@@ -29,7 +29,7 @@ export const SearchAxies = () => {
           onChange={(e) => setSearch(e.target.value)}
         />
         <Button variant="contained" onClick={handleSearch}>
-          Buscar
+          Search
         </Button>
       </Stack>
     </div>
