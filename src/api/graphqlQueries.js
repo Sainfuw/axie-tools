@@ -9,6 +9,7 @@ export const basicInfo = `query GetAxieDetail($axieId: ID!) {
   fragment AxieDetail on Axie {
     id,
     image,
+    owner,
     class,
     parts {
       id,

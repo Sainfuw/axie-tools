@@ -1,3 +1,4 @@
+import { EnemyCard } from "./EnemyCard";
 import getColor from "../../helpers/getColor";
 
 export const EnemyCards = ({ enemy }) => {
@@ -5,10 +6,10 @@ export const EnemyCards = ({ enemy }) => {
     <div
       style={{ ...styles.container, backgroundColor: getColor(enemy.class) }}
     >
-      <p>card1</p>
-      <p>card2</p>
-      <p>card3</p>
-      <p>card4</p>
+      <EnemyCard part={enemy.parts[3]} />
+      <EnemyCard part={enemy.parts[4]} />
+      <EnemyCard part={enemy.parts[2]} />
+      <EnemyCard part={enemy.parts[5]} />
     </div>
   );
 };
@@ -20,6 +21,6 @@ const styles = {
     alignItems: "center",
     flexDirection: "column",
     width: "170px",
-    height: "300px",
+    height: "270px",
   },
 };
