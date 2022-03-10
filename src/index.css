@@ -15,3 +15,13 @@ ul {
   padding: 0;
   list-style:"none"
 }
+
+.selected {
+  background: repeating-linear-gradient(
+    -45deg,
+    #E38711,
+    #E38711 10px,
+    #B88853 10px,
+    #B88853 20px
+  );
+}
