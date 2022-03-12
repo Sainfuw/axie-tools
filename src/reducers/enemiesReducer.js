@@ -6,10 +6,10 @@ const initialState = {
 
 export const enemiesReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "@enemies/setAxieOne":
+    case "@enemies/setEnemyAxie":
       return {
         ...state,
-        enemyOne: action.payload,
+        ...action.payload,
       };
     default:
       return state;

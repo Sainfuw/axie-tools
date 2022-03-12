@@ -2,6 +2,10 @@ import { EnemyCard } from "./EnemyCard";
 import getColor from "../../helpers/getColor";
 
 export const EnemyCards = ({ enemy }) => {
+  if (Object.keys(enemy).length === 0) {
+    return <></>;
+  }
+
   return (
     <div
       style={{ ...styles.container, backgroundColor: getColor(enemy.class) }}

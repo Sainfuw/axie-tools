@@ -3,9 +3,13 @@ import { getOwnerAxies } from "../../helpers/getOwnerAxies";
 
 import Button from "@mui/material/Button";
 
+import { useDispatch } from "react-redux";
+import { getAxieInfo } from "../../actions/enemiesActions";
+
 export const AxieFinder = ({ owner, enemyOne }) => {
   const [axiesArray, setAxiesArray] = useState([]);
   const [selectedAxies, setSelectedAxies] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getAxies = async () => {
@@ -15,13 +19,23 @@ export const AxieFinder = ({ owner, enemyOne }) => {
     };
 
     getAxies();
-  }, []);
+  }, [owner, enemyOne]);
 
   const handleSelection = (axie) => {
     if (selectedAxies.includes(axie)) {
       setSelectedAxies(selectedAxies.filter((ax) => ax !== axie));
     } else if (selectedAxies.length < 2) {
       setSelectedAxies([...selectedAxies, axie]);
+    }
+  };
+
+  const handleSend = () => {
+    if (selectedAxies.length === 2) {
+      const [enemyTwo, enemyThree] = selectedAxies;
+      dispatch(getAxieInfo({ enemyTwo }));
+      dispatch(getAxieInfo({ enemyThree }));
+    } else {
+      alert("2 axies must be select for fill enemy team");
     }
   };
 
@@ -34,7 +48,7 @@ export const AxieFinder = ({ owner, enemyOne }) => {
               key={axie.id}
               onClick={() => handleSelection(axie.id)}
               style={styles.axieSelection}
-              className={selectedAxies.includes(axie.id) && "selected"}
+              className={selectedAxies.includes(axie.id) ? "selected" : ""}
             >
               <img
                 src={axie.image}
@@ -46,7 +60,13 @@ export const AxieFinder = ({ owner, enemyOne }) => {
           ))}
       </div>
       <div style={styles.buttonContainer}>
-        <Button variant="contained">Send</Button>
+        <Button
+          variant="contained"
+          onClick={handleSend}
+          sx={{ marginTop: "20px" }}
+        >
+          Send
+        </Button>
       </div>
     </>
   );

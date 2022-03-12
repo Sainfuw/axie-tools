@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { EnemyCards } from "./EnemyCards";
 import { NoEnemies } from "./NoEnemies";
 import { AxieFinder } from "./AxieFinder";
+import { EnemyCards } from "./EnemyCards";
 
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -18,7 +18,7 @@ export const EnemiesCards = () => {
   const needFill = () =>
     Object.keys(enemyTwo).length === 0 && Object.keys(enemyThree).length === 0;
 
-  if (needFill && Object.keys(enemyOne).length === 0) {
+  if (needFill() && Object.keys(enemyOne).length === 0) {
     return <NoEnemies />;
   }
 
@@ -30,23 +30,29 @@ export const EnemiesCards = () => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={styles.modal}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
+          <Typography
+            id="modal-modal-title"
+            variant="h6"
+            component="h2"
+            textAlign="center"
+            sx={{ marginBottom: "30px" }}
+          >
+            Select two axies for fill enemy team
           </Typography>
           <AxieFinder owner={enemyOne.owner} enemyOne={enemyOne.id} />
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
         </Box>
       </Modal>
-      {needFill ? (
+      {needFill() ? (
         !modalVisible && setModalVisible(true)
       ) : (
-        <div style={styles.cardsContainer}>
-          <EnemyCards enemy={enemyOne} />
-          <EnemyCards enemy={enemyTwo} />
-          <EnemyCards enemy={enemyThree} />
-        </div>
+        <>
+          {modalVisible && setModalVisible(false)}
+          <div style={styles.cardsContainer}>
+            <EnemyCards enemy={enemyOne} />
+            <EnemyCards enemy={enemyTwo} />
+            <EnemyCards enemy={enemyThree} />
+          </div>
+        </>
       )}
     </div>
   );
@@ -57,6 +63,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
   },
+
   cardsContainer: {
     display: "flex",
     justifyContent: "center",
@@ -66,6 +73,7 @@ const styles = {
     border: "6px solid #5D330B",
     borderRadius: "10px",
   },
+
   modal: {
     position: "absolute",
     top: "50%",

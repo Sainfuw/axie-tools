@@ -13,7 +13,7 @@ export const SearchAxies = () => {
 
   const handleSearch = () => {
     if (search) {
-      dispatch(getAxieInfo(search));
+      dispatch(getAxieInfo({ enemyOne: search }));
     }
   };
 
