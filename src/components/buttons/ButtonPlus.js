@@ -5,7 +5,7 @@ export const ButtonPlus = ({ setValue, add }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(add ? addEnergy : removeEnergy);
+    dispatch(add ? addEnergy(1) : removeEnergy(1));
     setValue((val) => {
       if (val < 9) {
         return val + 1;

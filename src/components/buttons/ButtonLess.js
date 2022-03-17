@@ -6,7 +6,7 @@ export const ButtonLess = ({ value, setValue, add }) => {
 
   const handleClick = () => {
     if (value !== 0) {
-      dispatch(add ? addEnergy : removeEnergy);
+      dispatch(add ? addEnergy(1) : removeEnergy(1));
       setValue(value - 1);
     }
   };

@@ -1,4 +1,25 @@
-export const EnemyCard = ({ part }) => {
+import { useDispatch } from "react-redux";
+import { addEnergy, removeEnergy } from "../../actions/energyActions";
+
+export const EnemyCard = ({ part, usedCard, setCard }) => {
+  const dispatch = useDispatch();
+
+  const handlePlus = () => {
+    const [ability] = part.abilities;
+    if (ability.energy > 0) {
+      setCard((card) => card + ability.energy);
+      dispatch(removeEnergy(ability.energy));
+    }
+  };
+
+  const handleLess = () => {
+    const [ability] = part.abilities;
+    if (ability.energy > 0 && usedCard > 0) {
+      setCard((card) => card - ability.energy);
+      dispatch(addEnergy(ability.energy));
+    }
+  };
+
   return (
     <div style={styles.container}>
       <button
@@ -7,8 +28,14 @@ export const EnemyCard = ({ part }) => {
           ...styles.buttonImage,
           backgroundImage: `url(${part.abilities[0].backgroundUrl})`,
         }}
+        onClick={handlePlus}
       ></button>
-      <button style={{ ...styles.button, ...styles.textButton }}>0</button>
+      <button
+        style={{ ...styles.button, ...styles.textButton }}
+        onClick={handleLess}
+      >
+        {usedCard}
+      </button>
     </div>
   );
 };

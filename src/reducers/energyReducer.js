@@ -10,14 +10,14 @@ export const energyReducer = (state = initialState, action) => {
         ? state
         : {
             ...state,
-            energy: state.energy + 1,
+            energy: state.energy + action.payload,
           };
     case "@energy/remove":
       return state.energy === 0
         ? state
         : {
             ...state,
-            energy: state.energy - 1,
+            energy: state.energy - action.payload,
           };
     case "@energy/restart":
       return {

@@ -1,10 +1,12 @@
-export const addEnergy = {
+export const addEnergy = (payload) => ({
   type: "@energy/add",
-};
+  payload,
+});
 
-export const removeEnergy = {
+export const removeEnergy = (payload) => ({
   type: "@energy/remove",
-};
+  payload,
+});
 
 export const restartEnergy = {
   type: "@energy/restart",
