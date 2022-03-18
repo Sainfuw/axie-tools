@@ -79,7 +79,7 @@ const styles = {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: "1050px",
+    width: "1250px",
     bgcolor: "background.paper",
     border: "2px solid #000",
     boxShadow: 24,
