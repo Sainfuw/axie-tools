@@ -76,7 +76,7 @@ const styles = {
   axieSelectionContainer: {
     display: "grid",
     margin: "auto",
-    gridTemplateColumns: "repeat(2, 1fr)",
+    gridTemplateColumns: "repeat(6, 1fr)",
     gridGap: "25px",
   },
 
