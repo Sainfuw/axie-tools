@@ -6,16 +6,16 @@ export const EnemyCard = ({ part, usedCard, setCard }) => {
 
   const handlePlus = () => {
     const [ability] = part.abilities;
-    if (ability.energy > 0) {
-      setCard((card) => card + ability.energy);
-      dispatch(removeEnergy(ability.energy));
-    }
+
+    setCard((card) => card + 1);
+    dispatch(removeEnergy(ability.energy));
   };
 
   const handleLess = () => {
     const [ability] = part.abilities;
-    if (ability.energy > 0 && usedCard > 0) {
-      setCard((card) => card - ability.energy);
+
+    if (usedCard > 0) {
+      setCard((card) => card - 1);
       dispatch(addEnergy(ability.energy));
     }
   };
