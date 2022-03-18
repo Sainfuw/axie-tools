@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/axie-tools/static/css/main.f82bbe2b.css",
-    "main.js": "/axie-tools/static/js/main.b46bf312.js",
+    "main.js": "/axie-tools/static/js/main.3f0ba00f.js",
     "index.html": "/axie-tools/index.html",
     "main.f82bbe2b.css.map": "/axie-tools/static/css/main.f82bbe2b.css.map",
-    "main.b46bf312.js.map": "/axie-tools/static/js/main.b46bf312.js.map"
+    "main.3f0ba00f.js.map": "/axie-tools/static/js/main.3f0ba00f.js.map"
   },
   "entrypoints": [
     "static/css/main.f82bbe2b.css",
-    "static/js/main.b46bf312.js"
+    "static/js/main.3f0ba00f.js"
   ]
 }
